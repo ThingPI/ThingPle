@@ -12,7 +12,6 @@ import argparse, imutils
 import time, dlib, cv2, datetime
 import os
 from itertools import zip_longest
-
 t0 = time.time()
 
 def run():
@@ -101,7 +100,7 @@ def run():
 		# resize the frame to have a maximum width of 500 pixels (the
 		# less data we have, the faster we can process it), then convert
 		# the frame from BGR to RGB for dlib
-		frame = imutils.resize(frame, width = 500)
+		frame = imutils.resize(frame, width = 400)
 		rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
 		# if the frame dimensions are empty, set them
@@ -267,13 +266,13 @@ def run():
 
 		# construct a tuple of information we will be displaying on the
 		info = [
-		("Exit", totalUp),
+		("exit", totalUp),
 		("Enter", totalDown),
 		("Status", status),
 		]
 
 		info2 = [
-		("Total people inside", x),
+		("CURRENT", x),
 		]
 
                 # Display the output
